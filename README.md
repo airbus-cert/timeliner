@@ -35,9 +35,11 @@ There is a `-strict` flag to limit the output to only the matching event. For ex
 $ timeliner MFT.txt
 2013-04-10 08:42:37: \.\Windows\System32\winevt\Logs\Setup.evtx
 2015-02-16 15:58:27: \.\Windows\System32\winevt\Logs\Setup.evtx
+
 $ timeliner -filter 'date > "2015-01-01"' MFT.txt
 2013-04-10 08:42:37: \.\Windows\System32\winevt\Logs\Setup.evtx
 2015-02-16 15:58:27: \.\Windows\System32\winevt\Logs\Setup.evtx
+
 $ timeliner -strict -filter 'date > "2015-01-01"' MFT.txt
 2015-02-16 15:58:27: \.\Windows\System32\winevt\Logs\Setup.evtx
 ```
