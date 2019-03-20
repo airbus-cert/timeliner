@@ -6,28 +6,49 @@ import (
 	"io"
 	"os"
 
+	"github.com/mattn/go-isatty"
+
 	"github.cert.corp/nbareil/bodyfile"
 )
 
 var filter = flag.String("filter", "", "Event filter, like \"hour > 14\"")
 var strict = flag.Bool("strict", false, "Only show the entries maching the date restrictions")
 
-func main() {
-	flag.Parse()
-
-	if len(flag.Args()) == 0 {
-		os.Exit(1)
+func getInput() io.Reader {
+	if !isatty.IsTerminal(os.Stdin.Fd()) {
+		return os.Stdin
 	}
+
+	if flag.NArg() == 0 {
+		flag.Usage()
+	}
+
 	filename := flag.Arg(0)
+
+	if filename == "-" {
+		return os.Stdin
+	}
 
 	f, err := os.Open(filename)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Could not open %s: %s", filename, err)
 		os.Exit(1)
 	}
-	defer f.Close()
 
-	body := bodyfile.NewReader(f)
+	return f
+}
+
+func main() {
+	flag.Parse()
+
+	flag.Usage = func() {
+		fmt.Fprintf(flag.CommandLine.Output(), "Usage of %s:\n", os.Args[0])
+		fmt.Fprintf(flag.CommandLine.Output(), "\t%s [options] MFT.txt\n\n", os.Args[0])
+		flag.PrintDefaults()
+		os.Exit(1)
+	}
+
+	body := bodyfile.NewReader(getInput())
 	if *filter != "" {
 		err := body.AddFilter(*filter)
 		if err != nil {
