@@ -4,27 +4,16 @@ import (
 	"flag"
 	"fmt"
 	"io"
-	"log"
 	"os"
-	"runtime/pprof"
 
 	"github.cert.corp/nbareil/bodyfile"
 )
 
-var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
-var filter = flag.String("filter", "", "filter")
-var strict = flag.Bool("strict", false, "Only show the entries maching the restrictions")
+var filter = flag.String("filter", "", "Event filter, like \"hour > 14\"")
+var strict = flag.Bool("strict", false, "Only show the entries maching the date restrictions")
 
 func main() {
 	flag.Parse()
-	if *cpuprofile != "" {
-		f, err := os.Create(*cpuprofile)
-		if err != nil {
-			log.Fatal(err)
-		}
-		pprof.StartCPUProfile(f)
-		defer pprof.StopCPUProfile()
-	}
 
 	if len(flag.Args()) == 0 {
 		os.Exit(1)
