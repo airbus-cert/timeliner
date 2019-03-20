@@ -5,7 +5,9 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"time"
 
+	"github.com/fatih/color"
 	"github.com/mattn/go-isatty"
 
 	"github.cert.corp/nbareil/bodyfile"
@@ -13,6 +15,9 @@ import (
 
 var filter = flag.String("filter", "", "Event filter, like \"hour > 14\"")
 var strict = flag.Bool("strict", false, "Only show the entries maching the date restrictions")
+var flagColor = flag.Bool("color", false, "Enable color output")
+
+var colorDisabled = color.New(color.FgWhite).SprintFunc()
 
 func getInput() io.Reader {
 	if !isatty.IsTerminal(os.Stdin.Fd()) {
@@ -47,8 +52,13 @@ func main() {
 		flag.PrintDefaults()
 		os.Exit(1)
 	}
+	f := getInput()
 
-	body := bodyfile.NewReader(getInput())
+	if !*flagColor || !isatty.IsTerminal(os.Stdout.Fd()) {
+		color.NoColor = true // disables colorized output
+	}
+
+	body := bodyfile.NewReader(f)
 	if *filter != "" {
 		err := body.AddFilter(*filter)
 		if err != nil {
@@ -64,7 +74,7 @@ func main() {
 		os.Exit(3)
 	}
 
-	prev := ""
+	prev := time.Now()
 	for {
 		tsEntry, err := body.Next()
 
@@ -77,13 +87,27 @@ func main() {
 			os.Exit(4)
 		}
 
-		currentDate := tsEntry.Time.Format("2006-01-02")
-		if currentDate == prev {
-			fmt.Printf("           ")
-		} else {
-			fmt.Printf("%s ", currentDate)
+		date := tsEntry.Time.Format("2006-01-02")
+		if date == prev.Format("2006-01-02") {
+			date = colorDisabled(date)
 		}
-		fmt.Printf("%s: %s\n", tsEntry.Time.Format("15:04:05"), tsEntry.Entry.Name)
-		prev = currentDate
+
+		hour := fmt.Sprintf("%02d", tsEntry.Time.Hour())
+		if tsEntry.Time.Hour() == prev.Hour() {
+			hour = colorDisabled(hour)
+		}
+
+		min := fmt.Sprintf(":%02d", tsEntry.Time.Minute())
+		if tsEntry.Time.Minute() == prev.Minute() {
+			min = colorDisabled(min)
+		}
+
+		sec := fmt.Sprintf(":%02d:", tsEntry.Time.Second())
+		if tsEntry.Time.Second() == prev.Second() {
+			sec = colorDisabled(sec)
+		}
+
+		fmt.Printf("%s %s%s%s %s\n", date, hour, min, sec, tsEntry.Entry.Name)
+		prev = tsEntry.Time
 	}
 }
