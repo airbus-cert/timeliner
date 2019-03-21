@@ -2,6 +2,8 @@ github.cert.corp/nbareil/bodyfile v0.0.0-20190319102650-ed1fd46c197b h1:Shw/7v8P
 github.cert.corp/nbareil/bodyfile v0.0.0-20190319102650-ed1fd46c197b/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
 github.cert.corp/nbareil/bodyfile v0.0.0-20190319102904-c9d1127e826b h1:PZKMqRXq8jbKjA6cmCJxl7MKIxyqkaLLRLZymN3Atv0=
 github.cert.corp/nbareil/bodyfile v0.0.0-20190319102904-c9d1127e826b/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
+github.cert.corp/nbareil/bodyfile v0.0.0-20190321135916-f2d797f829cd h1:oDyPkYBLpaYyOmiDFZrjNxRYq7Nc+cY+4Mel1UwOl0A=
+github.cert.corp/nbareil/bodyfile v0.0.0-20190321135916-f2d797f829cd/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
 github.com/Knetic/govaluate v3.0.0+incompatible h1:7o6+MAPhYTCF0+fdvoz1xDedhRb4f6s9Tn1Tt7/WTEg=
 github.com/Knetic/govaluate v3.0.0+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
