@@ -18,6 +18,17 @@ The project is still ⍺ and 👼and is missing a few must-have features, but th
 ## How to use it?
 
 ```
+$ timeliner -h
+Usage of timeliner:
+	timeliner [options] MFT.txt
+
+  -color
+    	Enable color output
+  -filter string
+    	Event filter, like "hour > 14"
+  -strict
+    	Only show the entries maching the date restrictions
+
 $ timeliner -filter 'hour >= 1 && hour < 5' MFT.txt
 2006-10-10 02:15:35: \.\Users\xxx\AppData\Local\Temp\eo117895978tm
            02:16:07: \.\Users\xxx\AppData\Local\Temp\eo117895980tm
