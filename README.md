@@ -9,7 +9,7 @@ The mactime's capabilities to filter events based on the time are limited to onl
 * Show events that happened between 01:00am and 05:00am: `hour >= 1 && hour < 5`
 * Show events that happened on Saturday or Sunday: `weekday == 'Sunday' || weekday == 'Saturday'`
 * Show events that happened between 2018-12-01 and 2018-12-31: `date >= '2018-12-31' && date <= '2018-12-01'`
-* Show events that happened between 01:00am and 05:00am on Sundays or Saturday between 2018-12-01 and 2018-12-31: `(hour >= 1 && hour < 5) && (weekday == 'Sunday || weekday == 'Saturday') && (date >= '2018-12-31' && date <= '2018-12-01)`
+* Show events that happened between 01:00am and 05:00am on Sundays or Saturday between 2018-12-01 and 2018-12-31: `(hour >= 1 && hour < 5) && (weekday == 'Sunday' || weekday == 'Saturday') && (date >= '2018-12-31' && date <= '2018-12-01)`
 
 You get the idea :)
 
