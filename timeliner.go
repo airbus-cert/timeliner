@@ -93,18 +93,18 @@ func main() {
 		}
 
 		hour := fmt.Sprintf("%02d", tsEntry.Time.Hour())
+		min := fmt.Sprintf(":%02d", tsEntry.Time.Minute())
+		sec := fmt.Sprintf(":%02d:", tsEntry.Time.Second())
 		if tsEntry.Time.Hour() == prev.Hour() {
 			hour = colorDisabled(hour)
-		}
 
-		min := fmt.Sprintf(":%02d", tsEntry.Time.Minute())
-		if tsEntry.Time.Minute() == prev.Minute() {
-			min = colorDisabled(min)
-		}
+			if tsEntry.Time.Minute() == prev.Minute() {
+				min = colorDisabled(min)
 
-		sec := fmt.Sprintf(":%02d:", tsEntry.Time.Second())
-		if tsEntry.Time.Second() == prev.Second() {
-			sec = colorDisabled(sec)
+				if tsEntry.Time.Second() == prev.Second() {
+					sec = colorDisabled(sec)
+				}
+			}
 		}
 
 		fmt.Printf("%s %s%s%s %s\n", date, hour, min, sec, tsEntry.Entry.Name)
