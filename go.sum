@@ -1,13 +1,7 @@
-github.cert.corp/nbareil/bodyfile v0.0.0-20190319102650-ed1fd46c197b h1:Shw/7v8PeRfv4DN8ZAFbvGVtbD7/Jcopt8jeAREsi88=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190319102650-ed1fd46c197b/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190319102904-c9d1127e826b h1:PZKMqRXq8jbKjA6cmCJxl7MKIxyqkaLLRLZymN3Atv0=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190319102904-c9d1127e826b/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190321135916-f2d797f829cd h1:oDyPkYBLpaYyOmiDFZrjNxRYq7Nc+cY+4Mel1UwOl0A=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190321135916-f2d797f829cd/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190419071332-33382a47d1b4 h1:kyFAjSWkqZVOYQ6WopV8Dl1IA6cnD84Spg7M7ZOG1IE=
-github.cert.corp/nbareil/bodyfile v0.0.0-20190419071332-33382a47d1b4/go.mod h1:Kznx01NQ5MnIYbGzu+pVuX1AXIMG/ieA4ctxFADq5mI=
 github.com/Knetic/govaluate v3.0.0+incompatible h1:7o6+MAPhYTCF0+fdvoz1xDedhRb4f6s9Tn1Tt7/WTEg=
 github.com/Knetic/govaluate v3.0.0+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
+github.com/airbus-cert/bodyfile v0.0.0-20190419083046-f162f3a40b24 h1:pJc5EYjBsR2hVnfO6IWrf2RBuPRSG7MAZrXVmLrOujk=
+github.com/airbus-cert/bodyfile v0.0.0-20190419083046-f162f3a40b24/go.mod h1:lbDgpkA0qtfB7a0H+Q/4FCz6csCVx/m72GKYwmj8byU=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/mattn/go-colorable v0.1.1 h1:G1f5SKeVxmagw/IyvzvtZE4Gybcc4Tr1tf7I8z0XgOg=

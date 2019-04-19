@@ -10,7 +10,7 @@ import (
 	"github.com/fatih/color"
 	"github.com/mattn/go-isatty"
 
-	"github.cert.corp/nbareil/bodyfile"
+	"github.com/airbus-cert/bodyfile"
 )
 
 var filter = flag.String("filter", "", "Event filter, like \"hour > 14\"")
