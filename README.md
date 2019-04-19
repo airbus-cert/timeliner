@@ -55,3 +55,27 @@ $ timeliner -strict -filter 'date > "2015-01-01"' MFT.txt
 2015-02-16 15:58:27: \.\Windows\System32\winevt\Logs\Setup.evtx
 ```
 
+# What are the available keywords?
+
+| Keyword | Shortcut alias |Type | Description |
+|---------|-|------|-------------|
+| `weekday`| `w`|string| Day of the week (Sunday, Monday, ...)|
+| `hour`| `h`|integer|0..24|
+| `min`| `m`|integer|0..60|
+| `date`| `d`|string|ISO8601 date|
+| `path`| `p`|string|Path|
+
+# What operators are supported?
+
+- Modifiers: `+ - / * & | ^ ** % >> <<`
+- Comparators: `> >= < <= == != =~ !~`
+- Logical ops: `|| &&`
+- String constants (single quotes: `'foobar'`)
+- Date constants (single quotes, using any permutation of RFC3339, ISO8601, ruby date, or unix date; date parsing is automatically tried with any string constant)
+- Boolean constants: `true false`
+- Parenthesis to control order of evaluation `( )`
+- Arrays (anything separated by , within parenthesis: `(1, 2, 'foo')`)
+- Prefixes: `! - ~`
+
+Read the [expression engine manual](https://github.com/Knetic/govaluate/blob/master/MANUAL.md) to learn new tricks!
+
