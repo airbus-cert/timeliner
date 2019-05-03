@@ -14,7 +14,7 @@ The mactime's capabilities to filter events based on the time are limited to onl
 
 You get the idea :)
 
-The project is still ⍺ and 👼and is missing a few must-have features, but the killer feature is its expression engine which is ready.
+The project is still ⍺ and 👶 and is missing a few must-have features, but the killer feature is its expression engine which is ready.
 
 ## How to use it?
 
