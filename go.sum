@@ -2,6 +2,8 @@ github.com/Knetic/govaluate v3.0.0+incompatible h1:7o6+MAPhYTCF0+fdvoz1xDedhRb4f
 github.com/Knetic/govaluate v3.0.0+incompatible/go.mod h1:r7JcOSlj0wfOMncg0iLm8Leh48TZaKVeNIfJntJ2wa0=
 github.com/airbus-cert/bodyfile v0.0.0-20190419083046-f162f3a40b24 h1:pJc5EYjBsR2hVnfO6IWrf2RBuPRSG7MAZrXVmLrOujk=
 github.com/airbus-cert/bodyfile v0.0.0-20190419083046-f162f3a40b24/go.mod h1:lbDgpkA0qtfB7a0H+Q/4FCz6csCVx/m72GKYwmj8byU=
+github.com/airbus-cert/bodyfile v0.0.0-20190503112232-e68c97462acf h1:1q94TToULLwk5YVgcfFYL4eSLuEZJnqbXSfC/n4SFqs=
+github.com/airbus-cert/bodyfile v0.0.0-20190503112232-e68c97462acf/go.mod h1:lbDgpkA0qtfB7a0H+Q/4FCz6csCVx/m72GKYwmj8byU=
 github.com/fatih/color v1.7.0 h1:DkWD4oS2D8LGGgTQ6IvwJJXSL5Vp2ffcQg58nFV38Ys=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/mattn/go-colorable v0.1.1 h1:G1f5SKeVxmagw/IyvzvtZE4Gybcc4Tr1tf7I8z0XgOg=
