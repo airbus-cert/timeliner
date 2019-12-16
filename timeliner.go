@@ -107,7 +107,7 @@ func main() {
 			}
 		}
 
-		fmt.Printf("%s %s%s%s %s\n", date, hour, min, sec, tsEntry.Entry.Name)
+		fmt.Fprintf(color.Output, "%s %s%s%s %s\n", date, hour, min, sec, tsEntry.Entry.Name)
 		prev = tsEntry.Time
 	}
 }
