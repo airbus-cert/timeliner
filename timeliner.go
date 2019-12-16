@@ -87,6 +87,13 @@ func main() {
 			os.Exit(4)
 		}
 
+		mChar := entryType(tsEntry, tsEntry.Entry.ModificationTime, "m")
+		aChar := entryType(tsEntry, tsEntry.Entry.AccessTime, "a")
+		cChar := entryType(tsEntry, tsEntry.Entry.ChangeTime, "c")
+		bChar := entryType(tsEntry, tsEntry.Entry.CreationTime, "b")
+
+		macbLine := fmt.Sprintf("%s%s%s%s", mChar, aChar, cChar, bChar)
+
 		date := tsEntry.Time.Format("2006-01-02")
 		if date == prev.Format("2006-01-02") {
 			date = colorDisabled(date)
@@ -107,7 +114,14 @@ func main() {
 			}
 		}
 
-		fmt.Fprintf(color.Output, "%s %s%s%s %s\n", date, hour, min, sec, tsEntry.Entry.Name)
+		fmt.Fprintf(color.Output, "%s %s%s%s %s %s\n", date, hour, min, sec, macbLine, tsEntry.Entry.Name)
 		prev = tsEntry.Time
 	}
+}
+
+func entryType(entry *bodyfile.TimeStampedEntry, check time.Time, c string) string {
+	if entry.Time.Equal(check) {
+		return c
+	}
+	return "."
 }
