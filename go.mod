@@ -3,7 +3,7 @@ module main
 go 1.20
 
 require (
-	github.com/airbus-cert/bodyfile v0.0.0-20230821152535-ff7c66e7f34d
+	github.com/airbus-cert/bodyfile v0.0.0-20240805093721-37c04d7819f7
 	github.com/fatih/color v1.8.0
 	github.com/mattn/go-isatty v0.0.20
 )
